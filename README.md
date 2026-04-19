@@ -4,7 +4,7 @@
 [![Framework: PyTorch](https://img.shields.io/badge/Framework-PyTorch-orange.svg)](https://pytorch.org/)
 
 <p align="center">
-  <img src="assets/airiadoverview.pdf" alt="AirIAD Framework Overview" width="100%">
+  <img src="assets/airiadoverview.png" alt="AirIAD Framework Overview" width="100%">
 </p>
 
 ## 📖 Abstract
