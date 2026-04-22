@@ -8,9 +8,7 @@
 </p>
 
 ## 📖 Abstract
-Multimodal Large Language Models (MLLMs) offer a promising paradigm for Industrial Anomaly Detection (IAD). However, their performance on fine-grained anomaly analysis remains suboptimal, heavily constrained by the formidable challenges of nuanced visual comprehension and severe domain-specific knowledge scarcity. To address this, we present **AirIAD**, a pioneering agentic iterative reasoning framework for IAD. Equipped with two specialized tools, the Perceptive Zoomer and the Knowledge Retriever, AirIAD actively extracts granular visual details and expert semantic priors at each iteration, rigorously cross-validating these cues to dynamically refine its prediction or commit. 
 
-This agentic capability is cultivated through a two-stage training strategy. First, a warm-up supervised fine-tuning phase enables the model to master the Spatio-Semantic Cross-Verification Chain-of-Thought (SSCV CoT) template and tool-calling formats. Subsequently, a reinforcement learning phase via Spatio-Semantic GRPO (SS-GRPO) empowers the agent with robust tool invocation capabilities and precise spatio-semantic alignment analysis. Extensive experiments on the MMAD benchmark demonstrate that AirIAD, powered by Qwen3-VL-4B, achieves state-of-the-art performance across anomaly detection and diagnosis, significantly outperforming leading open-source and commercial MLLMs.
 
 ## 🔗 Model Weights (ModelScope)
 We provide our fine-tuned model weights openly via ModelScope. AirIAD is built upon the powerful **Qwen3-VL-Instruct** architecture, offering two scalable versions to balance deployment efficiency and reasoning capability.
