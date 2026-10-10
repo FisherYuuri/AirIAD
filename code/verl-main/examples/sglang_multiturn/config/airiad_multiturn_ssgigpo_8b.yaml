@@ -1,0 +1,35 @@
+hydra:
+  searchpath:
+    - file://verl/trainer/config
+
+defaults:
+  - ppo_trainer
+  - _self_
+
+data:
+  return_raw_chat: True
+  image_key: images
+
+actor_rollout_ref:
+  hybrid_engine: True
+  rollout:
+    name: sglang
+    multi_turn:
+      enable: True
+      max_assistant_turns: 6
+      max_parallel_calls: 4
+      format: hermes
+      max_tool_response_length: 4096
+      tool_response_truncate_side: left
+
+# SSGiGPO config
+algorithm:
+  adv_estimator: ssgigpo
+  ssgigpo:
+    step_advantage_w: 1.0    
+    iou_threshold: 0.5        
+    mode: mean_norm            
+  use_kl_in_reward: False
+
+trainer:
+  total_training_steps: 160

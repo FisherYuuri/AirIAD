@@ -1,0 +1,46 @@
+# AiRIAD inspect tool config
+# inspect(crop, query) — crop via bbox [0,1000] + letter/keyword query
+# Returns: cropped image + domain knowledge (exact match) + IoU reward
+
+tools:
+  - class_name: "verl.tools.airiad_tool.InspectTool"
+    config:
+      type: native
+      # Image compression (disabled by default)
+      resize_crop_image: false
+      max_image_pixels: 262144   # 512x512
+      min_image_pixels: 1024     # 32x32
+      # Crop image saving (disabled by default)
+      save_crop_image: false
+      crop_save_dir: "/path/to/outputs/airiad_test_crops"
+      # Domain knowledge & candidates paths
+      knowledge_path: "knowledge_base/knowledge.json"
+      candidates_path: "knowledge_base/candidates.json"
+      debug_mode: false
+    tool_schema:
+      type: "function"
+      function:
+        name: "inspect"
+        description: 
+          Zoom into a specific region of the image and retrieve relevant defect descriptions.
+          Returns a cropped image of the region and text knowledge matching the query.
+          Query should be a LETTER (A, B, C, D, etc.) from the candidate list.
+        parameters:
+          type: "object"
+          properties:
+            crop:
+              type: "array"
+              items:
+                type: "number"
+              minItems: 4
+              maxItems: 4
+              description: 
+                Bounding box [x1, y1, x2, y2] of the region to inspect.
+                All values are integers in [0, 1000]. Top-left is (x1, y1), bottom-right is (x2, y2).
+            query:
+              type: "string"
+              description: 
+                The LETTER (A, B, C, D, etc.) of the anomaly type from the
+                candidate list provided in the user message; choose the letter
+                that best matches your current visual hypothesis.
+          required: ["crop", "query"]
