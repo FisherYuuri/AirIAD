@@ -19,9 +19,9 @@ We provide our fine-tuned model weights openly via ModelScope. AirIAD is built u
 | **AirIAD-8B** | Qwen3-VL-Instruct-8B | 8B | [🔗 FisherYuuri/AirIAD-8B](https://modelscope.cn/models/FisherYuuri/AirIAD-8B) |
 
 ## 📅 TODO
-- [ ] Release Training Scripts (Support for both Qwen3-VL-Instruct 4B and 8B versions).
-- [ ] Release Testing & Evaluation Scripts for the MMAD benchmark.
-- [ ] Open-source the training datasets (Warm-up SFT & RL data).
+- [x] Release Training Scripts (Support for both Qwen3-VL-Instruct 4B and 8B versions).
+- [x] Release Testing & Evaluation Scripts for the MMAD benchmark.
+- [x] Open-source the training datasets (Warm-up SFT & RL data).
 
 ## 🙏 Acknowledgments
 We would like to express our sincere gratitude to the following outstanding open-source projects and pioneering research works, which greatly inspired and facilitated the development of AirIAD:
