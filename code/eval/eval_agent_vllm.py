@@ -139,9 +139,9 @@ TOOL_RESULT_TEMPLATE_PART2 = (
 # ============================================================================
 
 _TC_XML_RE = re.compile(
-    r'<tool_call]\s*<name>\s*inspect\s*</name>\s*'
+    r'<tool_call>\s*<name>\s*inspect\s*</name>\s*'
     r'<crop>\s*(\[[\d\s.,\-]+\])\s*</crop>\s*'
-    r'<query>\s*(.*?)\s*</query>\s*</tool_call]',
+    r'<query>\s*(.*?)\s*</query>\s*</tool_call>',
     re.DOTALL | re.IGNORECASE,
 )
 _ANS_XML_RE = re.compile(
